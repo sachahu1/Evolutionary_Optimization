@@ -47,7 +47,7 @@ git config --global user.name "${GITHUB_ACTOR}"
 git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
 docroot=`mktemp -d`
-rsync -av "Evolutionary_Algorithm/docs/build/html/" "${docroot}/"
+rsync -av "Evolutionary_Optimization/docs/build/html/" "${docroot}/"
 
 pushd "${docroot}"
 
