@@ -57,8 +57,8 @@ Before pushing anything to this repository, please complete the following checks
 
 
 * Go to the root of the repository
-* Run the following command: ``run_tests.sh Evolutionary_Algorithm``
-* Inspect the generated reports in ``Evolutionary_Algorithm/tests``
+* Run the following command: ``run_tests.sh Evolutionary_Optimization``
+* Inspect the generated reports in ``Evolutionary_Optimization/tests``
 * Solve all errors and warning in accordance to the google-style documentation referenced above.
 * Additionally, please ensure the doctests run correctly with no error.
 
