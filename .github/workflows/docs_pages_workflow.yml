@@ -5,9 +5,10 @@ on:
   push:
     branches: [ main ]
     paths:
-      -'**.py'
-      -'**.rst'          
-    
+      - '**.py'
+      - '**.rst'
+      - '**.yml'    
+
 jobs:
   build_docs_job:
 
