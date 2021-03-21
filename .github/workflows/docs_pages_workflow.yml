@@ -28,5 +28,5 @@ jobs:
     - name: Execute script to build our documentation and update pages
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: "Evolutionary_Algorithm/docs/buildDocs.sh"
+      run: "Evolutionary_Optimization/docs/buildDocs.sh"
       shell: bash
