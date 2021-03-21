@@ -1,0 +1,31 @@
+name: docs_pages_workflow
+
+# execute this workflow automatically when a we push to master
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build_docs_job:
+
+
+
+    runs-on: ubuntu-latest
+    container: debian:buster-slim
+    steps:
+    - name: Prereqs
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        apt-get update
+        apt-get install -y git
+        apt-get install -y python3-pip
+        git clone --depth 1 "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
+        pip3 install -r requirements.txt
+      shell: bash
+
+    - name: Execute script to build our documentation and update pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: "Evolutionary_Algorithm/docs/buildDocs.sh"
+      shell: bash
