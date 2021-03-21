@@ -4,7 +4,9 @@ name: docs_pages_workflow
 on:
   push:
     branches: [ main ]
-          
+    paths:
+      -'**.py'
+      -'**.rst'          
     
 jobs:
   build_docs_job:
