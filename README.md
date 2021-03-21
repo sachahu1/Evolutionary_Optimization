@@ -35,6 +35,23 @@ python3 train_ea.py
 ```
 *This section is incomplete*
 
+### Examples
+Below are a few examples of an evolutionary optimization task being solved.
+
+Booth Function:
+![](https://github.com/sachahu1/Evolutionary_Optimization/tree/main/Evolutionary_Optimization/src/Visualisations/Booth_function.gif)
+
+Bukin function:
+![](https://github.com/sachahu1/Evolutionary_Optimization/tree/main/Evolutionary_Optimization/src/Visualisations/Bukin_function.gif)
+
+Easom function:
+![](https://github.com/sachahu1/Evolutionary_Optimization/tree/main/Evolutionary_Optimization/src/Visualisations/Easom_function.gif)
+
+Goldstein-Price function:
+![](https://github.com/sachahu1/Evolutionary_Optimization/tree/main/Evolutionary_Optimization/src/Visualisations/Goldstein-Price_function.gif)
+
+Rosenbrock function:
+![](https://github.com/sachahu1/Evolutionary_Optimization/tree/main/Evolutionary_Optimization/src/Visualisations/Rosenbrock_function.gif)
 
 ## Documentation
 You can consult our documentation [here](https://sachahu1.github.io/Evolutionary_Optimization/).
