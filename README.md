@@ -1,5 +1,5 @@
 ![docs_pages_workflow](https://github.com/sachahu1/Evolutionary_Optimization/workflows/docs_pages_workflow/badge.svg)
-# Evolutionary Algorithm
+# Evolutionary Optimization
 
 This module can be used to solve optimization tasks.
 For instance, you could use this module to tune the hyper-parameters of a neural
@@ -10,7 +10,7 @@ network or a decision tree.
 To install the package, simply run:
 ```shell script
 git clone https://github.com/sachahu1/Evolutionary_Optimization
-cd Evolutionary_Algorithm
+cd Evolutionary_Optimization
 ```
 Then, set up a virtual environment like so:
 ```shell script
@@ -27,16 +27,24 @@ pip3 install -r requirements.txt
 ### Using the package
 First go to the right directory:
 ```shell script
-cd Evolutionary_Algorithm/src
+cd Evolutionary_Optimization/src
 ```
 Then, run the code as follows:
 ```python
 python3 train_ea.py
 ```
-*This section is incomplete*
+### Configuring your experiment
+You can easily configure your own optimization problem through the ```Evolutionary_Optimization/src/config.py``` file.
+To do so, simply follow these steps:<br>
+* Write your own test function which evaluates an individual's genotype into a phenotype (see ![these examples](Evolutionary_Optimization/src/test_functions.py)).
+* Write your own fitness function which evaluates an individual's phenotype and returns a fitness score (see ![these examples](Evolutionary_Optimization/src/loss_functions.py)).
+* Define your own genotype in the format of a python Dict with the minimum and maximum values
+* Configure the parameters of your experiment
+
+You're all set and ready to solve your optimization problem!
 
 ### Examples
-Below are a few examples of an evolutionary optimization task being solved.
+Below are a few examples of an evolutionary optimization task being solved. In these examples, the black dot represents the best individual in the population and the cross represents the worst individual.
 
 Booth Function:<br>
 ![](Evolutionary_Optimization/src/Visualisations/Booth_function.gif)
