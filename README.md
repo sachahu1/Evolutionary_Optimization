@@ -1,4 +1,4 @@
-![docs_pages_workflow](https://github.com/Pear-Bio/Evolutionary_Algorithm/workflows/docs_pages_workflow/badge.svg)
+![docs_pages_workflow](https://github.com/sachahu1/Evolutionary_Optimization/workflows/docs_pages_workflow/badge.svg)
 # Evolutionary Algorithm
 
 This module can be used to solve optimization tasks.
