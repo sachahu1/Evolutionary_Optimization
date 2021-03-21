@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>ea module &mdash; Evolutionary Algorithm Library 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gene module" href="gene.html" />
+    <link rel="prev" title="config module" href="config.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Evolutionary Algorithm Library
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="config.html">config module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ea module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gene.html">gene module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="individual.html">individual module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loss_functions.html">loss_functions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="population.html">population module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test_functions.html">test_functions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="train_ea.html">train_ea module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Evolutionary Algorithm Library</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">src</a> &raquo;</li>
+        
+      <li>ea module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/ea.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ea">
+<span id="ea-module"></span><h1>ea module<a class="headerlink" href="#module-ea" title="Permalink to this headline">¶</a></h1>
+<p>This module defines the Evolutionary Algorithm (EA) class.</p>
+<p>This module defines the EA class, used to configure, create and train an
+evolutionary algorithm. It defines the methods and processes currently
+supported including:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Evolution of a EA</p></li>
+<li><p>4D visualisation of the evolution in the phenotype space.</p></li>
+</ul>
+</div></blockquote>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">loss_functions</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">test_functions</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gene</span> <span class="kn">import</span> <span class="n">Gene</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">genotype</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">... </span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">]),</span>
+<span class="gp">... </span><span class="s2">&quot;y&quot;</span><span class="p">:(</span><span class="nb">float</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">]),</span>
+<span class="gp">... </span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">... </span> <span class="s2">&quot;pop_size&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
+<span class="gp">... </span> <span class="s2">&quot;elitism&quot;</span><span class="p">:</span><span class="mf">0.3</span><span class="p">,</span>
+<span class="gp">... </span> <span class="s2">&quot;indiv&quot;</span><span class="p">:</span> <span class="n">genotype</span><span class="p">,</span>
+<span class="gp">... </span> <span class="s2">&quot;generations&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+<span class="gp">... </span> <span class="s2">&quot;crossover&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="gp">... </span> <span class="s2">&quot;crossover rate&quot;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>
+<span class="gp">... </span> <span class="s2">&quot;constraint&quot;</span><span class="p">:</span><span class="s2">&quot;Hard&quot;</span><span class="p">,</span>
+<span class="gp">... </span> <span class="s2">&quot;fitness&quot;</span><span class="p">:</span> <span class="n">loss_functions</span><span class="o">.</span><span class="n">Minimize</span><span class="p">,</span>
+<span class="gp">... </span> <span class="s2">&quot;optimization function&quot;</span><span class="p">:</span> <span class="n">test_functions</span><span class="o">.</span><span class="n">easom_test</span><span class="p">,</span>
+<span class="gp">... </span> <span class="s2">&quot;verbose&quot;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="gp">... </span> <span class="s2">&quot;print rate&quot;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+<span class="gp">... </span> <span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ea</span> <span class="o">=</span> <span class="n">EA</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ea</span><span class="o">.</span><span class="n">evolve</span><span class="p">()</span> 
+<span class="go">----- Begin Evolution -----</span>
+<span class="gp">...</span>
+<span class="go">----- Evolution Over -----</span>
+<span class="go">Best individual:</span>
+<span class="go">     fitness : ...</span>
+<span class="go">Worst individual:</span>
+<span class="go">     fitness : ...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ea</span><span class="o">.</span><span class="n">visualise</span><span class="p">()</span> 
+<span class="gp">...</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt id="ea.EA">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">ea.</span></code><code class="sig-name descname"><span class="pre">EA</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ea.html#EA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ea.EA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The EA class, used to define an evolutionary process.</p>
+<p>Defines an evolutionary process, performs the evolution of a population and
+the visualisation of the process.</p>
+<dl class="py method">
+<dt id="ea.EA.evolve">
+<code class="sig-name descname"><span class="pre">evolve</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="reference internal" href="_modules/ea.html#EA.evolve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ea.EA.evolve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evolves a population using the desired configuration.</p>
+<p>Evolves a population of individuals with a given genotype through:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Random mutations</p></li>
+<li><p>Crossovers (Optional)</p></li>
+<li><p>Elitism (Optional)</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ea.EA.visualise">
+<code class="sig-name descname"><span class="pre">visualise</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">savefig</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'animation'</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="reference internal" href="_modules/ea.html#EA.visualise"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ea.EA.visualise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Visualise the evolutionary process in 4D.</p>
+<p>Makes a 4D (3d + time) visualisation of the evolutionary process by plotting
+the phenotype space. Saves the animation in a folder named
+<code class="docutils literal notranslate"><span class="pre">Visualisations</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>savefig</strong> (<em>str</em>) – Name under which the animation will be saved.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="gene.html" class="btn btn-neutral float-right" title="gene module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="config.html" class="btn btn-neutral float-left" title="config module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Sacha Hu.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

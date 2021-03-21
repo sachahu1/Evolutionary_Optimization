@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>loss_functions &mdash; Evolutionary Algorithm Library 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Evolutionary Algorithm Library
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">src</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Evolutionary Algorithm Library</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>loss_functions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for loss_functions</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;This module contains some basic implementations of simple fitness functions.</span>
+
+<span class="sd">This module defines some basic fitness functions to use during the evolutionary</span>
+<span class="sd">process.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<div class="viewcode-block" id="MSE"><a class="viewcode-back" href="../loss_functions.html#loss_functions.MSE">[docs]</a><span class="k">def</span> <span class="nf">MSE</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">]:</span>
+  <span class="sd">&quot;&quot;&quot;A basic implementation of Mean Squared Error.</span>
+
+<span class="sd">  This function computes the Mean Squared Error between x and an objective_value</span>
+<span class="sd">  defined through the configuration file.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    x (float): The value to evaluate. This is most likely the individual&#39;s</span>
+<span class="sd">      phenotype.</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    fitness (float): The individual&#39;s Mean Squared Error on the optimization</span>
+<span class="sd">      task.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">objective_value</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">objective_value</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span></div>
+
+<div class="viewcode-block" id="L1"><a class="viewcode-back" href="../loss_functions.html#loss_functions.L1">[docs]</a><span class="k">def</span> <span class="nf">L1</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">]:</span>
+  <span class="sd">&quot;&quot;&quot;A basic implementation of the L1 norm.</span>
+
+<span class="sd">  This function computes the L1 norm between x and an objective_value</span>
+<span class="sd">  defined through the configuration file.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    x (float): The value to evaluate. This is most likely the individual&#39;s</span>
+<span class="sd">      phenotype.</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    fitness (float): The individual&#39;s L1 error on the optimization task.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">objective_value</span>
+  <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">objective_value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Minimize"><a class="viewcode-back" href="../loss_functions.html#loss_functions.Minimize">[docs]</a><span class="k">def</span> <span class="nf">Minimize</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">]:</span>
+  <span class="sd">&quot;&quot;&quot;The fitness to use when trying to minimize a function.</span>
+
+<span class="sd">  This is the fitness to use in order to perform a minimization task. This is</span>
+<span class="sd">  important so the evolution process can evaluate and compare individuals.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    x (float): The value to evaluate. This is most likely the individual&#39;s</span>
+<span class="sd">      phenotype.</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    x (float): The individual&#39;s fitness on the optimization task.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="k">return</span> <span class="n">x</span></div>
+
+<div class="viewcode-block" id="Maximize"><a class="viewcode-back" href="../loss_functions.html#loss_functions.Maximize">[docs]</a><span class="k">def</span> <span class="nf">Maximize</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">]:</span>
+  <span class="sd">&quot;&quot;&quot;The fitness to use when trying to maximize a function.</span>
+
+<span class="sd">  This is the fitness to use in order to perform a maximization task. This is</span>
+<span class="sd">  important so the evolution process can evaluate and compare individuals.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    x (float): The value to evaluate. This is most likely the individual&#39;s</span>
+<span class="sd">      phenotype.</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    x (float): The individual&#39;s fitness on the optimization task.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="k">return</span> <span class="o">-</span><span class="n">x</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Sacha Hu.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
