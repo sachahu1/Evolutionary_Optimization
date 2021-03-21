@@ -15,8 +15,8 @@ Installation
 
 To install the package, simply run::
 
-   git clone https://github.com/Pear-Bio/Evolutionary_Algorithm
-   cd Evolutionary_Algorithm
+   git clone https://github.com/sachahu1/Evolutionary_Optimization
+   cd Evolutionary_Optimization
 
 Then, set up a virtual environment like so::
 
@@ -35,7 +35,7 @@ Using the package
 
 First go to the right directory::
 
-   cd Evolutionary_Algorithm/src
+   cd Evolutionary_Optmimization/src
 
 Then, run the code over a z-stack folder as follows::
 
@@ -49,7 +49,7 @@ changes in the config.py file.
 Documentation
 -------------
 
-You can consult our documentation *UPDATE* `here <https://automatic-doodle-3d4f5025.pages.github.io/>`_.
+You can consult our documentation `here <https://sachahu1.github.io/Evolutionary_Optimization/>`_.
 
 Our documentation is automatically generated using sphinx-autodoc. This means that **all modifications** to the code must follow `google-style docstring syntax <https://google.github.io/styleguide/pyguide.html>`_.
 

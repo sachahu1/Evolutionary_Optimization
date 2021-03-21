@@ -37,4 +37,4 @@ python3 train_ea.py
 
 
 ## Documentation
-You can consult our documentation [here](https://friendly-system-c0f24c3e.pages.github.io/).
+You can consult our documentation [here](https://sachahu1.github.io/Evolutionary_Optimization/).
