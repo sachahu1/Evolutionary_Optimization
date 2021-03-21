@@ -6,7 +6,7 @@ on:
     branches: [ main ]
     paths: 
       -'**.py'
-      -'.github/workflows'
+      -'**.yml'
     
     
 jobs:
