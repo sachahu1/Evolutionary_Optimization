@@ -42,16 +42,16 @@ Booth Function:<br>
 ![](Evolutionary_Optimization/src/Visualisations/Booth_function.gif)
 
 Bukin function:<br>
-![](Evolutionary_Optimization/Evolutionary_Optimization/src/Visualisations/Bukin_function.gif)
+![](Evolutionary_Optimization/src/Visualisations/Bukin_function.gif)
 
 Easom function:<br>
-![](Evolutionary_Optimization/Evolutionary_Optimization/src/Visualisations/Easom_function.gif)
+![](Evolutionary_Optimization/src/Visualisations/Easom_function.gif)
 
 Goldstein-Price function:<br>
-![](Evolutionary_Optimization/Evolutionary_Optimization/src/Visualisations/Goldstein-Price_function.gif)
+![](Evolutionary_Optimization/src/Visualisations/Goldstein-Price_function.gif)
 
 Rosenbrock function:<br>
-![](Evolutionary_Optimization/Evolutionary_Optimization/src/Visualisations/Rosenbrock_function.gif)
+![](Evolutionary_Optimization/src/Visualisations/Rosenbrock_function.gif)
 
 ## Documentation
 You can consult our documentation [here](https://sachahu1.github.io/Evolutionary_Optimization/).
