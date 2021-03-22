@@ -36,8 +36,8 @@ python3 train_ea.py
 ### Configuring your experiment
 You can easily configure your own optimization problem through the ```Evolutionary_Optimization/src/config.py``` file.
 To do so, simply follow these steps:<br>
-* Write your own test function which evaluates an individual's genotype into a phenotype (see ![these examples](Evolutionary_Optimization/src/test_functions.py)).
-* Write your own fitness function which evaluates an individual's phenotype and returns a fitness score (see ![these examples](Evolutionary_Optimization/src/loss_functions.py)).
+* Write your own test function which evaluates an individual's genotype into a phenotype (see [these examples](Evolutionary_Optimization/src/test_functions.py)).
+* Write your own fitness function which evaluates an individual's phenotype and returns a fitness score (see [these examples](Evolutionary_Optimization/src/loss_functions.py)).
 * Define your own genotype in the format of a python Dict with the minimum and maximum values
 * Configure the parameters of your experiment
 
